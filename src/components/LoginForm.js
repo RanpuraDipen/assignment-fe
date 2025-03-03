@@ -14,7 +14,7 @@ const LoginForm = () => {
     e.preventDefault();
     setError("");
     try {
-      const response = await axios.post("http://localhost:3001/api/auth/login", { email, password });
+      const response = await axios.post("https://assignment-be-n9m1.onrender.com:3001/api/auth/login", { email, password });
       dispatch(
         loginSuccess({
           token: response.data.result.accessToken,

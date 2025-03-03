@@ -32,7 +32,7 @@ const Lists = () => {
   // Fetch all saved lists
   const fetchLists = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/lists", {
+      const response = await axios.get("https://assignment-be-n9m1.onrender.com:3001/api/lists", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setLists(response.data.result); // Ensure API response is correctly mapped
@@ -44,7 +44,7 @@ const Lists = () => {
   // Fetch list details by ID when user clicks "View"
   const openListDetails = async (list) => {
     try {
-      const response = await axios.get(`http://localhost:3001/api/lists/${list.list_id}`, {
+      const response = await axios.get(`https://assignment-be-n9m1.onrender.com:3001/api/lists/${list.list_id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -68,7 +68,7 @@ const Lists = () => {
   // Delete a saved list
   const deleteList = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/api/lists/delete/${id}`, {
+      await axios.delete(`https://assignment-be-n9m1.onrender.com:3001/api/lists/delete/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -97,7 +97,7 @@ const Lists = () => {
         response_codes: selectedList.response_code_ids,
       };
 
-      const response = await axios.put(`http://localhost:3001/api/lists/edit/${selectedList.id}`, updatedData, {
+      const response = await axios.put(`https://assignment-be-n9m1.onrender.com:3001/api/lists/edit/${selectedList.id}`, updatedData, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

@@ -14,7 +14,7 @@ const SignupForm = () => {
     setError("");
     setSuccess("");
     try {
-      await axios.post("http://localhost:3001/api/auth/signup", { username, email, password });
+      await axios.post("https://assignment-be-n9m1.onrender.com:3001/api/auth/signup", { username, email, password });
       setSuccess("Account created successfully! Please log in.");
     } catch (err) {
       setError("Signup failed. Try again.");

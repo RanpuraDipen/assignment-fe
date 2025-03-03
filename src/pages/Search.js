@@ -26,7 +26,7 @@ const Search = () => {
 
   const fetchImages = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/api/response-codes/list?filter=${filter}`, {
+      const response = await axios.get(`https://assignment-be-n9m1.onrender.com:3001/api/response-codes/list?filter=${filter}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setImages(response.data.result);
@@ -44,7 +44,7 @@ const Search = () => {
     };
 
     try {
-      const response = await axios.post("http://localhost:3001/api/lists", listData, {
+      const response = await axios.post("https://assignment-be-n9m1.onrender.com:3001/api/lists", listData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setOpenDialog(false);
